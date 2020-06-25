@@ -23,6 +23,7 @@
         android:layout_alignParentTop="true"
         android:layout_marginStart="127dp"
         android:text="Fast and Furious Presents: Hobbs Shaw"
+        android:textColor="#E61313"
         android:textSize="24sp" />
 
     <TextView
@@ -35,5 +36,6 @@
         android:layout_marginTop="5dp"
         android:layout_marginEnd="2dp"
         android:layout_toEndOf="@+id/ivPoster"
-        android:text="In a suburban fantasy world, two teenage elf brothers embark on an extraordinary quest to discover if there is still a little magic left out there." />
+        android:text="In a suburban fantasy world, two teenage elf brothers embark on an extraordinary quest to discover if there is still a little magic left out there."
+        android:textColor="#FFFFFF" />
 </RelativeLayout>
