@@ -77,18 +77,18 @@ public class MovieAdapter extends RecyclerView.Adapter<MovieAdapter.ViewHolder> 
             tvTitle.setText(movie.getTitle());
             tvOverview.setText(movie.getOverview());
             String imageURL;
-            int radius = 30; // corner radius, higher value = more rounded
+            int radius = 50; // corner radius, higher value = more rounded
             int margin = 10; // crop margin, set to 0 for corners with no crop
             // If phone is in landscape
             if (context.getResources().getConfiguration().orientation == Configuration.ORIENTATION_LANDSCAPE) {
                 // image URL = backdropImage
                 imageURL = movie.getBackdropPath();
-                Glide.with(context).load(imageURL).placeholder(R.drawable.flicks_backdrop_placeholder).into(ivPoster);
+                Glide.with(context).load(imageURL).placeholder(R.drawable.flicks_backdrop_placeholder).transform(new RoundedCornersTransformation(radius, margin)).into(ivPoster);
             }
             // else imageURL = posterImage
             else {
                 imageURL = movie.getPosterPath();
-                Glide.with(context).load(imageURL).placeholder(R.drawable.flicks_movie_placeholder).into(ivPoster);
+                Glide.with(context).load(imageURL).placeholder(R.drawable.flicks_movie_placeholder).transform(new RoundedCornersTransformation(radius, margin)).into(ivPoster);
             }
         }
 
