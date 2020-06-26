@@ -22,6 +22,7 @@
         android:layout_marginEnd="5dp"
         android:layout_marginRight="5dp"
         android:text="Movie Title"
+        android:textAlignment="center"
         android:textAppearance="@android:style/TextAppearance.Large"
         android:textColor="#E61313" />
 
@@ -34,12 +35,14 @@
         android:layout_alignParentLeft="true"
         android:layout_alignParentEnd="true"
         android:layout_alignParentRight="true"
-        android:layout_marginStart="0dp"
-        android:layout_marginLeft="0dp"
-        android:layout_marginTop="2dp"
-        android:layout_marginEnd="0dp"
-        android:layout_marginRight="0dp"
+        android:layout_centerHorizontal="true"
+        android:layout_marginStart="5dp"
+        android:layout_marginLeft="5dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="4dp"
+        android:layout_marginRight="4dp"
         android:text="TextView"
+        android:textAlignment="textStart"
         android:textColor="#FFFFFF" />
 
     <RatingBar
@@ -50,9 +53,9 @@
         android:layout_below="@+id/ivPoster"
         android:layout_alignParentStart="true"
         android:layout_alignParentLeft="true"
-        android:layout_marginStart="5dp"
-        android:layout_marginLeft="5dp"
-        android:layout_marginTop="2dp"
+        android:layout_marginStart="131dp"
+        android:layout_marginLeft="131dp"
+        android:layout_marginTop="8dp"
         android:numStars="5"
         android:stepSize="0.5" />
 
@@ -60,22 +63,24 @@
         android:id="@+id/btnTrailer"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_below="@+id/tvOverview"
+        android:layout_below="@+id/ivPoster"
         android:layout_alignParentStart="true"
         android:layout_marginStart="5dp"
-        android:layout_marginTop="7dp"
+        android:layout_marginTop="1dp"
+        android:layout_marginBottom="20dp"
+        android:layout_toEndOf="@+id/rbVoteAverage"
         android:onClick="onClick"
         android:text="Play Trailer" />
 
     <ImageView
         android:id="@+id/ivPoster"
         android:layout_width="match_parent"
-        android:layout_height="175dp"
+        android:layout_height="125dp"
         android:layout_below="@+id/tvTitle"
         android:layout_alignParentStart="true"
+        android:layout_alignParentLeft="false"
         android:layout_alignParentEnd="true"
         android:layout_marginStart="5dp"
         android:layout_marginTop="5dp"
-        android:layout_marginEnd="133dp"
         tools:src="@tools:sample/avatars" />
 </RelativeLayout>
