@@ -23,21 +23,21 @@
         android:layout_alignParentTop="true"
         android:layout_alignParentEnd="true"
         android:layout_marginStart="351dp"
-        android:layout_marginTop="1dp"
-        android:layout_marginEnd="-1dp"
+        android:layout_marginEnd="0dp"
         android:text="Fast and Furious Presents: Hobbs Shaw"
         android:textColor="#E61313"
         android:textSize="24sp" />
 
     <TextView
         android:id="@+id/tvOverview"
-        android:layout_width="wrap_content"
+        android:layout_width="373dp"
         android:layout_height="wrap_content"
         android:layout_below="@+id/tvTitle"
         android:layout_alignParentEnd="true"
-        android:layout_marginStart="5dp"
+        android:layout_marginStart="2dp"
         android:layout_marginTop="5dp"
         android:layout_marginEnd="2dp"
+        android:layout_marginBottom="5dp"
         android:layout_toEndOf="@+id/ivPoster"
         android:text="In a suburban fantasy world, two teenage elf brothers embark on an extraordinary quest to discover if there is still a little magic left out there."
         android:textColor="#FFFFFF" />
