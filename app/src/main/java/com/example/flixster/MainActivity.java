@@ -34,7 +34,7 @@ public class MainActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        // Implement binding
+        // Implement ViewBinding
         ActivityMainBinding binding = ActivityMainBinding.inflate(getLayoutInflater());
         View main = binding.getRoot();
         setContentView(main);
@@ -51,6 +51,8 @@ public class MainActivity extends AppCompatActivity {
         rvMovies.setLayoutManager(new LinearLayoutManager(this));
 
         AsyncHttpClient client = new AsyncHttpClient();
+
+        // Returns array of movies
         client.get(NOW_PLAYING_URL, new JsonHttpResponseHandler() {
             @Override
             public void onSuccess(int statusCode, Headers headers, JSON json) {

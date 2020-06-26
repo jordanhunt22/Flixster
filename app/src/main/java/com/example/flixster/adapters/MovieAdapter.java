@@ -77,15 +77,15 @@ public class MovieAdapter extends RecyclerView.Adapter<MovieAdapter.ViewHolder> 
             tvTitle.setText(movie.getTitle());
             tvOverview.setText(movie.getOverview());
             String imageURL;
-            int radius = 50; // corner radius, higher value = more rounded
-            int margin = 0; // crop margin, set to 0 for corners with no crop
+            int radius = 50; // Corner radius, higher value = more rounded
+            int margin = 0; // Crop margin, set to 0 for corners with no crop
             // If phone is in landscape
             if (context.getResources().getConfiguration().orientation == Configuration.ORIENTATION_LANDSCAPE) {
-                // image URL = backdropImage
+                // Image URL = backdropImage
                 imageURL = movie.getBackdropPath();
                 Glide.with(context).load(imageURL).placeholder(R.drawable.flicks_backdrop_placeholder).transform(new RoundedCornersTransformation(radius, margin)).into(ivPoster);
             }
-            // else imageURL = posterImage
+            // Else imageURL = posterImage
             else {
                 imageURL = movie.getPosterPath();
                 Glide.with(context).load(imageURL).placeholder(R.drawable.flicks_movie_placeholder).transform(new RoundedCornersTransformation(radius, margin)).into(ivPoster);
@@ -95,19 +95,18 @@ public class MovieAdapter extends RecyclerView.Adapter<MovieAdapter.ViewHolder> 
         // Shows MovieDetails Activity when user clicks on a row
         @Override
         public void onClick(View v) {
-            // gets item position
+            // Gets item position
             int position = getAdapterPosition();
-            // make sure the position is valid, i.e. actually exists in the view
+            // Make sure the position is valid, i.e. actually exists in the view
             if (position != RecyclerView.NO_POSITION) {
-                // get the movie at the position, this won't work if the class is static
+                // Get the movie at the position, this won't work if the class is static
                 Movie movie = movies.get(position);
-                // create intent for the new activity
+                // Create intent for the new activity
                 Intent intent = new Intent(context, MovieDetailsActivity.class);
-                // serialize the movie using parceler, use its short name as a key
+                // Serialize the movie using parceler, use its short name as a key
                 intent.putExtra(Movie.class.getSimpleName(), Parcels.wrap(movie));
-                // show the activity
+                // Show the activity
                 context.startActivity(intent);
-
             }
         }
     }
