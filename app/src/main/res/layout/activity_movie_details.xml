@@ -16,6 +16,11 @@
         android:layout_alignParentTop="true"
         android:layout_alignParentEnd="true"
         android:layout_alignParentRight="true"
+        android:layout_marginStart="1dp"
+        android:layout_marginLeft="1dp"
+        android:layout_marginTop="5dp"
+        android:layout_marginEnd="5dp"
+        android:layout_marginRight="5dp"
         android:text="Movie Title"
         android:textAppearance="@android:style/TextAppearance.Large"
         android:textColor="#E61313" />
@@ -42,9 +47,12 @@
         style="@style/Widget.AppCompat.RatingBar.Indicator"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_below="@+id/tvTitle"
+        android:layout_below="@+id/ivPoster"
         android:layout_alignParentStart="true"
         android:layout_alignParentLeft="true"
+        android:layout_marginStart="5dp"
+        android:layout_marginLeft="5dp"
+        android:layout_marginTop="2dp"
         android:numStars="5"
         android:stepSize="0.5" />
 
@@ -55,7 +63,19 @@
         android:layout_below="@+id/tvOverview"
         android:layout_alignParentStart="true"
         android:layout_marginStart="5dp"
-        android:layout_marginTop="6dp"
-        android:text="Play Trailer"
-        android:onClick="onClick"/>
+        android:layout_marginTop="7dp"
+        android:onClick="onClick"
+        android:text="Play Trailer" />
+
+    <ImageView
+        android:id="@+id/ivPoster"
+        android:layout_width="match_parent"
+        android:layout_height="175dp"
+        android:layout_below="@+id/tvTitle"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentEnd="true"
+        android:layout_marginStart="5dp"
+        android:layout_marginTop="5dp"
+        android:layout_marginEnd="133dp"
+        tools:src="@tools:sample/avatars" />
 </RelativeLayout>
