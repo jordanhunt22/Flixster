@@ -4,6 +4,7 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.os.Bundle;
 import android.util.Log;
+import android.widget.Toast;
 
 import com.codepath.asynchttpclient.callback.JsonHttpResponseHandler;
 import com.example.flixster.models.Movie;
@@ -39,6 +40,7 @@ public class MovieTrailerActivity extends YouTubeBaseActivity {
 
         AsyncHttpClient client = new AsyncHttpClient();
 
+        // Creates URL to retrieve YouTube video
         tURL = "https://api.themoviedb.org/3/movie/" + movie.getId() + "/videos?api_key=a07e22bc18f5cb106bfe4cc1f83ad8ed";
 
         client.get(tURL, new JsonHttpResponseHandler() {
@@ -50,8 +52,9 @@ public class MovieTrailerActivity extends YouTubeBaseActivity {
                     if (results.length() > 0) {
                         JSONObject movieTrailer = results.getJSONObject(0);
                         key = movieTrailer.getString("key");
+
                         // resolve the player view from the layout
-                        YouTubePlayerView playerView = (YouTubePlayerView) findViewById(R.id.player);
+                        YouTubePlayerView playerView = findViewById(R.id.player);
 
                         // initialize with API key stored in secrets.xml
                         playerView.initialize(getString(R.string.google_API_key), new YouTubePlayer.OnInitializedListener() {
@@ -69,6 +72,9 @@ public class MovieTrailerActivity extends YouTubeBaseActivity {
                                 Log.e("MovieTrailerActivity", "Error initializing YouTube player");
                             }
                         });
+                    }
+                    else {
+                        Toast.makeText(getApplicationContext(), "Movie trailer not available", Toast.LENGTH_LONG).show();
                     }
                 } catch (JSONException e) {
                     e.printStackTrace();
